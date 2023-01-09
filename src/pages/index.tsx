@@ -66,7 +66,7 @@ const MovieSkeleton = () => (
   <div className="movie-list scale-in">
     {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
       <div key={item} className="movie-skeleton">
-        <div style={{ width: 212, height: 320 }} className="poster"></div>
+        <div style={{ width: '100%', height: 320 }} className="poster"></div>
         <div className="title"></div>
         <div className="genres">
           <div></div>

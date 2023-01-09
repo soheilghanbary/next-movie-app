@@ -38,7 +38,7 @@
   @apply rounded-lg bg-secondary shadow-md p-4 flex flex-col gap-4;
 
   .poster {
-    @apply bg-primary animate-pulse rounded-lg;
+    @apply bg-primary animate-pulse rounded-lg h-64;
   }
 
   .title {

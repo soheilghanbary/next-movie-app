@@ -1,0 +1,44 @@
+.single-movie {
+  @apply max-w-screen-md mx-auto shadow-lg rounded-lg p-4 bg-secondary flex xl:flex-row lg:flex-row md:flex-row flex-col gap-6;
+
+  img {
+    @apply rounded-lg shadow-md;
+  }
+
+  h1 {
+    @apply text-heading font-medium leading-8;
+  }
+
+  .items {
+    @apply flex flex-col gap-4 my-4;
+
+    li {
+      @apply flex items-center gap-2 text-sm;
+    }
+  }
+
+  .genres {
+    @apply flex flex-wrap items-center gap-2 mb-3;
+
+    .item {
+      @apply bg-primary shadow-md rounded-md px-2 leading-7 active:scale-90 duration-150 cursor-pointer text-sm font-medium tracking-tighter;
+    }
+  }
+
+  .description {
+    @apply text-sm leading-7;
+  }
+}
+
+.thumbails {
+  @apply max-w-screen-md mx-auto mt-6;
+
+  img {
+    @apply w-full object-cover shadow-lg rounded-lg;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    display: none;
+  }
+}

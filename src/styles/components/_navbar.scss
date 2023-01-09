@@ -1,0 +1,28 @@
+.header {
+  @apply shadow-md p-4 sticky top-0 bg-secondary dark:bg-transparent dark:backdrop-blur-3xl;
+  position: sticky;
+  z-index: 999;
+  top: 0;
+}
+.navbar {
+  @apply max-w-screen-xl mx-auto flex items-center justify-between;
+}
+
+.logo {
+  @apply flex items-center gap-4;
+  h4 {
+    @apply font-bold text-heading;
+  }
+}
+
+.menu {
+  @apply xl:flex lg:flex md:flex hidden items-center flex-1 ml-10;
+}
+
+.menu-item {
+  @apply px-4 py-2 font-medium hover:text-blue cursor-pointer duration-150 dark:hover:text-white;
+}
+
+.nav-btn {
+  @apply py-2 px-4 leading-6 rounded-lg bg-blue text-white font-medium active:scale-90 duration-150 shadow-md;
+}

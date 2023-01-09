@@ -1,0 +1,70 @@
+.movie-list {
+  @apply grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 my-4;
+}
+
+.movie-card {
+  @apply relative p-3 rounded-lg shadow-lg flex flex-col gap-2 bg-secondary hover:ring-2 ring-blue duration-200 cursor-pointer active:scale-90;
+
+  .imdb {
+    @apply z-20 absolute top-0 right-0 bg-warning rounded-xl text-white p-2;
+  }
+
+  .poster {
+    @apply relative;
+
+    img {
+      @apply w-full object-cover rounded-lg shadow-md;
+    }
+
+    .title {
+      @apply w-full p-3 rounded-lg backdrop-blur-2xl absolute bottom-0 left-0;
+
+      h2 {
+        @apply font-medium leading-8 tracking-tighter text-white;
+      }
+    }
+  }
+
+  .genres {
+    @apply flex flex-wrap items-center gap-2 mt-1;
+
+    .item {
+      @apply bg-primary shadow-md rounded-md p-2 text-xs font-medium tracking-tighter;
+    }
+  }
+}
+
+.movie-skeleton {
+  @apply rounded-lg bg-secondary shadow-md p-4 flex flex-col gap-4;
+
+  .poster {
+    @apply bg-primary animate-pulse rounded-lg;
+  }
+
+  .title {
+    @apply rounded-full bg-primary animate-pulse w-1/2 h-6;
+  }
+
+  .genres {
+    @apply flex items-center gap-2;
+
+    div {
+      @apply rounded-full bg-primary animate-pulse w-16 h-6;
+    }
+  }
+}
+
+.paginations {
+  @apply flex justify-center items-center gap-2;
+  div {
+    @apply px-3 py-2 hover:text-blue font-medium cursor-pointer hover:ring-2 dark:hover:text-heading text-sm shadow-md rounded-lg bg-secondary ring-blue duration-150 active:scale-90;
+
+    &.active {
+      @apply bg-blue text-white;
+    }
+  }
+}
+
+.paginations-btn {
+  @apply px-3 py-3 flex justify-center items-center hover:text-blue font-medium cursor-pointer hover:ring-2 dark:hover:text-heading text-sm shadow-md rounded-lg bg-secondary ring-blue duration-150 active:scale-90 disabled:opacity-30;
+}

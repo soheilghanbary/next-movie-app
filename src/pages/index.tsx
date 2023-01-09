@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [page, setPage] = useState(1);
@@ -43,30 +44,33 @@ const MovieList = ({ page }: { page: number }) => {
   );
 };
 
-const MovieCard = (movie: MovieProps) => (
-  <Link href={`/movies/${movie.id}`} className="movie-card">
-    <div className="imdb">{movie.imdb_rating}</div>
-    <div className="poster">
-      <Poster alt={movie.title} src={movie.poster} />
-      <div className="title">
-        <h2>{movie.title}</h2>
+const MovieCard = (movie: MovieProps) => {
+  const router = useRouter()
+  return (
+    <div onClick={() => router.push(`/movies/${movie.id}`)} className="movie-card">
+      <div className="imdb">{movie.imdb_rating}</div>
+      <div className="poster">
+        <Poster alt={movie.title} src={movie.poster} />
+        <div className="title">
+          <h2>{movie.title}</h2>
+        </div>
+      </div>
+      <div className="genres">
+        {movie.genres.map((item, i) => (
+          <div key={i} className="item">
+            {item}
+          </div>
+        ))}
       </div>
     </div>
-    <div className="genres">
-      {movie.genres.map((item, i) => (
-        <div key={i} className="item">
-          {item}
-        </div>
-      ))}
-    </div>
-  </Link>
-);
+  );
+};
 
 const MovieSkeleton = () => (
   <div className="movie-list scale-in">
     {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
       <div key={item} className="movie-skeleton">
-        <div style={{ width: '100%' }} className="poster"></div>
+        <div style={{ width: "100%" }} className="poster"></div>
         <div className="title"></div>
         <div className="genres">
           <div></div>

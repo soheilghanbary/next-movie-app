@@ -73,11 +73,13 @@ const Movie = (movie: any) => (
       </div>
     </div>
     <Swiper className="thumbails" spaceBetween={20} slidesPerView={3} loop>
-      {movie.images.map((thumbail: any) => (
-        <SwiperSlide key={thumbail} className="py-4 -mt-3">
-          <Thumbail src={thumbail} alt={movie.title} />
-        </SwiperSlide>
-      ))}
+      {movie.images &&
+        movie.images.length &&
+        movie.images.map((thumbail: any) => (
+          <SwiperSlide key={thumbail} className="py-4 -mt-3">
+            <Thumbail src={thumbail} alt={movie.title} />
+          </SwiperSlide>
+        ))}
     </Swiper>
   </>
 );
